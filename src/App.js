@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Chips from "./Chips";
 import Drinks from "./Drinks";
@@ -12,18 +12,19 @@ function App() {
       <h1>VENDING MACHINE</h1>
       <BrowserRouter>
         <NavBar />
+        <Routes>
+          <Route exact path="/chips" element={<Chips />}>
+            {/* <Chips /> */}
+          </Route>
 
-        <Route exact path="/chips">
-          <Chips />
-        </Route>
+          <Route exact path="/drinks" element={<Drinks />}>
+            {/* <Drinks /> */}
+          </Route>
 
-        <Route exact path="/drinks">
-          <Drinks />
-        </Route>
-
-        <Route exact path="/cookies">
-          <Cookies />
-        </Route>
+          <Route exact path="/cookies" element={<Cookies />}>
+            {/* <Cookies /> */}
+          </Route>
+        </Routes>
       </BrowserRouter>
     </div>
   );
